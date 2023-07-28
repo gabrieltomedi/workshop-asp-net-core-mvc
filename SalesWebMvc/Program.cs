@@ -5,7 +5,7 @@ using SalesWebMvc.Models;
 using SalesWebMvc.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("SalesWebMvcContext");
+var  connectionString = builder.Configuration.GetConnectionString("SalesWebMvcContext");
 builder.Services.AddDbContext<SalesWebMvcContext>(options =>
     options.UseMySql(connectionString ?? throw new InvalidOperationException("Connection string 'SalesWebMvcContext' not found."), Microsoft.EntityFrameworkCore.ServerVersion.AutoDetect(connectionString)));
 
